@@ -1,0 +1,11 @@
+name,novelty,gold,found,recall_pct
+baseline_lookup,seen,10206,7690,75.35
+baseline_lookup,unseen,3302,332,10.05
+crf,seen,10206,9863,96.64
+crf,unseen,3302,2590,78.44
+sgd_bow,seen,10206,7209,70.63
+sgd_bow,unseen,3302,1003,30.38
+sgd_tfidf,seen,10206,7686,75.31
+sgd_tfidf,unseen,3302,1042,31.56
+sgd_word2vec,seen,10206,7067,69.24
+sgd_word2vec,unseen,3302,1061,32.13

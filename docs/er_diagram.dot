@@ -1,0 +1,105 @@
+digraph ER {
+  graph [rankdir=TB, bgcolor="#fcfcfb", fontname="DejaVu Sans", pad=0.3, nodesep=0.4, ranksep=0.9];
+  node  [shape=plain, fontname="DejaVu Sans", fontsize=10];
+  edge  [color="#52514e", arrowhead=crow, arrowtail=tee, dir=both, fontname="DejaVu Sans", fontsize=8];
+
+  entity_types [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#2a78d6"><font color="white"><b>entity_types</b></font></td></tr>
+    <tr><td align="left"><b>PK</b> type_code</td></tr>
+    <tr><td align="left">description</td></tr></table>>];
+
+  sentences [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#2a78d6"><font color="white"><b>sentences</b></font></td></tr>
+    <tr><td align="left"><b>PK</b> sentence_id</td></tr>
+    <tr><td align="left">split</td></tr>
+    <tr><td align="left">n_tokens</td></tr>
+    <tr><td align="left">text</td></tr></table>>];
+
+  tokens [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#2a78d6"><font color="white"><b>tokens</b></font></td></tr>
+    <tr><td align="left"><b>PK, FK</b> sentence_id</td></tr>
+    <tr><td align="left"><b>PK</b> position</td></tr>
+    <tr><td align="left">token, lower</td></tr>
+    <tr><td align="left">stem, lemma</td></tr>
+    <tr><td align="left">is_stopword</td></tr>
+    <tr><td align="left">tag (IOB2)</td></tr></table>>];
+
+  entities [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#2a78d6"><font color="white"><b>entities</b> (gold)</font></td></tr>
+    <tr><td align="left"><b>PK</b> entity_id</td></tr>
+    <tr><td align="left"><b>FK</b> sentence_id</td></tr>
+    <tr><td align="left"><b>FK</b> type_code</td></tr>
+    <tr><td align="left">start_pos, end_pos</td></tr>
+    <tr><td align="left">n_tokens, text</td></tr></table>>];
+
+  keywords [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#2a78d6"><font color="white"><b>keywords</b></font></td></tr>
+    <tr><td align="left"><b>PK, FK</b> type_code</td></tr>
+    <tr><td align="left"><b>PK</b> rank</td></tr>
+    <tr><td align="left">term, score</td></tr></table>>];
+
+  models [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#eb6834"><font color="white"><b>models</b></font></td></tr>
+    <tr><td align="left"><b>PK</b> model_id</td></tr>
+    <tr><td align="left">name (unique), description</td></tr>
+    <tr><td align="left">train_sentences, n_features</td></tr>
+    <tr><td align="left">train_time_s, predict_time_s</td></tr>
+    <tr><td align="left">peak_mem_mb, created_at</td></tr></table>>];
+
+  model_scores [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#eb6834"><font color="white"><b>model_scores</b></font></td></tr>
+    <tr><td align="left"><b>PK, FK</b> model_id</td></tr>
+    <tr><td align="left">accuracy</td></tr>
+    <tr><td align="left">precision_micro, recall_micro</td></tr>
+    <tr><td align="left">f1_micro, f1_macro</td></tr></table>>];
+
+  class_scores [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#eb6834"><font color="white"><b>class_scores</b></font></td></tr>
+    <tr><td align="left"><b>PK, FK</b> model_id</td></tr>
+    <tr><td align="left"><b>PK, FK</b> type_code</td></tr>
+    <tr><td align="left">precision, recall, f1, support</td></tr></table>>];
+
+  predicted_entities [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#eb6834"><font color="white"><b>predicted_entities</b></font></td></tr>
+    <tr><td align="left"><b>PK</b> pred_id</td></tr>
+    <tr><td align="left"><b>FK</b> model_id</td></tr>
+    <tr><td align="left"><b>FK</b> sentence_id</td></tr>
+    <tr><td align="left"><b>FK</b> type_code</td></tr>
+    <tr><td align="left">start_pos, end_pos, text</td></tr></table>>];
+
+  errors [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#eb6834"><font color="white"><b>errors</b></font></td></tr>
+    <tr><td align="left"><b>PK</b> error_id</td></tr>
+    <tr><td align="left"><b>FK</b> model_id, sentence_id</td></tr>
+    <tr><td align="left">error_type</td></tr>
+    <tr><td align="left"><b>FK</b> gold_type, pred_type</td></tr>
+    <tr><td align="left">gold_text, pred_text, context</td></tr></table>>];
+
+  user_queries [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#1baf7a"><font color="white"><b>user_queries</b></font></td></tr>
+    <tr><td align="left"><b>PK</b> query_id</td></tr>
+    <tr><td align="left"><b>FK</b> model_id</td></tr>
+    <tr><td align="left">input_text, created_at</td></tr></table>>];
+
+  user_query_entities [label=<<table border="0" cellborder="1" cellspacing="0" cellpadding="4" bgcolor="white">
+    <tr><td bgcolor="#1baf7a"><font color="white"><b>user_query_entities</b></font></td></tr>
+    <tr><td align="left"><b>PK</b> id</td></tr>
+    <tr><td align="left"><b>FK</b> query_id</td></tr>
+    <tr><td align="left"><b>FK</b> type_code</td></tr>
+    <tr><td align="left">text</td></tr></table>>];
+
+  sentences -> tokens;
+  sentences -> entities;
+  entity_types -> entities;
+  entity_types -> keywords;
+  models -> model_scores [arrowhead=tee];
+  models -> class_scores;
+  entity_types -> class_scores;
+  models -> predicted_entities;
+  sentences -> predicted_entities;
+  models -> errors;
+  sentences -> errors;
+  models -> user_queries;
+  user_queries -> user_query_entities;
+  entity_types -> user_query_entities;
+}

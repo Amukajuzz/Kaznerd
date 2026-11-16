@@ -1,0 +1,5 @@
+task,pandas_s,sqlite_s,faster
+entity mentions per class,0.02039728699992338,0.16320919700001468,pandas
+mean sentence length per split,0.04017081799975131,0.10185606300001382,pandas
+top-3 words per tag (window function),0.06929279099995256,0.23404221900000266,pandas
+(one-off) load parquet into pandas,0.05473094299986769,,

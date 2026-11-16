@@ -1,0 +1,26 @@
+type_code,rank,text,n
+GPE,1,Қазақстан,1188
+GPE,2,Қазақстанның,617
+GPE,3,Қазақстанда,535
+GPE,4,Алматы,426
+GPE,5,Нұр-Сұлтан,374
+LOCATION,1,Ертіс,122
+LOCATION,2,Еуропа,97
+LOCATION,3,Орталық Азия,82
+LOCATION,4,Жайық,77
+LOCATION,5,Каспий,62
+ORGANISATION,1,Хабар,408
+ORGANISATION,2,Үкімет,400
+ORGANISATION,3,Нұр Отан,138
+ORGANISATION,4,Үкіметтің,123
+ORGANISATION,5,Мәжіліс,122
+PERSON,1,Қасым-Жомарт Тоқаев,590
+PERSON,2,Нұрсұлтан Назарбаев,454
+PERSON,3,Нұрсұлтан Назарбаевтың,198
+PERSON,4,Абайдың,183
+PERSON,5,Гүлжан Марқабаева,169
+POSITION,1,Президент,917
+POSITION,2,Елбасы,704
+POSITION,3,Мемлекет басшысы,609
+POSITION,4,Елбасының,325
+POSITION,5,Президенттің,250

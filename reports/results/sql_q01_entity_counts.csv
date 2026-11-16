@@ -1,0 +1,26 @@
+type_code,description,mentions,unique_forms,avg_tokens
+CARDINAL,Numerals that are not another numeric type,29261,6018,1.61
+DATE,Absolute or relative dates and periods,25448,7631,2.24
+GPE,"Geo-political entities: countries, cities, regions",17543,2038,1.2
+PERSON,"People, including fictional",13577,3735,1.83
+ORGANISATION,"Companies, agencies, institutions",7592,2298,2.19
+POSITION,Job titles and positions,6142,1084,2.08
+MONEY,Monetary values with unit,4562,3229,3.59
+PERCENTAGE,Percentages,4283,2488,2.72
+QUANTITY,"Measurements: weight, distance, area",3908,3213,3.27
+ORDINAL,Ordinal numbers,3870,283,1.07
+NORP,"Nationalities, religious or political groups",3714,576,1.01
+ART,"Titles of works of art, books, songs, films",2407,505,2.11
+TIME,Times shorter than a day,2316,1153,2.31
+LOCATION,"Non-GPE locations: rivers, mountains, districts",2175,585,1.24
+FACILITY,"Buildings, airports, roads, bridges",2147,1185,2.52
+PROJECT,"Named projects, programmes, initiatives",2111,575,2.72
+EVENT,"Named events: wars, festivals, sports events",1658,852,3.37
+DISEASE,Diseases and medical conditions,1273,267,1.52
+PRODUCT,"Objects, vehicles, foods, brands",738,294,1.67
+LAW,"Named laws, codes, treaties, conventions",534,353,4.11
+LANGUAGE,Named languages,443,101,1.46
+MISCELLANEOUS,Other named entities,244,111,1.55
+CONTACT,"Addresses, phone numbers, e-mails, URLs",202,114,2.7
+ADAGE,"Proverbs, sayings and idioms",197,172,5.21
+NON_HUMAN,Named animals and other non-human beings,8,6,1.25

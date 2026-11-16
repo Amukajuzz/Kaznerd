@@ -1,0 +1,12 @@
+{
+  "rows": 1302352,
+  "sentences": 112702,
+  "rows_per_split": {
+    "train": 1043305,
+    "valid": 129223,
+    "test": 129824
+  },
+  "tags": 51,
+  "in_memory_mb": 33.21431064605713,
+  "seconds": 4.389141333999987
+}

@@ -1,0 +1,20 @@
+{
+  "sentences": {
+    "train": 90228,
+    "valid": 11167,
+    "test": 11307
+  },
+  "tokens": {
+    "train": 1043305,
+    "valid": 129223,
+    "test": 129824
+  },
+  "train_word_types": 64061,
+  "train_word_tokens": 843177,
+  "stopword_token_share": 0.0973994784013321,
+  "entity_mentions": 136353,
+  "entity_classes": 25,
+  "mean_entity_length": 1.9491980374469209,
+  "ud_test_tokens": 1668,
+  "ud_test_oov": 695
+}

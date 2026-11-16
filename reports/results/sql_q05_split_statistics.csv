@@ -1,0 +1,4 @@
+split,sentences,tokens,avg_tokens,avg_entities,pct_without_entities
+train,90228,1043305,11.56,1.212,32.8
+valid,11167,129223,11.57,1.207,32.6
+test,11307,129824,11.48,1.195,33.3

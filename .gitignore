@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.idea/
+.vscode/
+# generated data (rebuilt by menu steps 1 and 2)
+data/processed/
+data/kaznerd.db
+# trained models and checkpoints (rebuilt by step 4 / transformer script)
+models/
